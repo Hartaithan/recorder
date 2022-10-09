@@ -1,11 +1,15 @@
 import cv2
 import numpy as np
 import pyautogui
+import subprocess
 import pygetwindow as gw
 from datetime import datetime
 from tzlocal import get_localzone
 
-window_name = "iTunes"
+url = 'https://multiuser-sketchpad-colors.glitch.me'
+child = subprocess.Popen(f"start chrome {url} --new-window", shell=True)
+
+window_name = "Multiuser Sketchpad (Colors)"
 
 date = datetime.now()
 localdate = date.astimezone(get_localzone()).strftime("%Y-%m-%d %H-%M-%S")
