@@ -6,14 +6,14 @@ import pygetwindow as gw
 from datetime import datetime
 from tzlocal import get_localzone
 
-url = 'https://multiuser-sketchpad-colors.glitch.me'
+url = "https://multiuser-sketchpad-colors.glitch.me"
 child = subprocess.Popen(f"start chrome {url} --new-window", shell=True)
 
 window_name = "Multiuser Sketchpad (Colors)"
 
 date = datetime.now()
 localdate = date.astimezone(get_localzone()).strftime("%Y-%m-%d %H-%M-%S")
-filename = "./output/" + window_name + " " + localdate + ".mp4"
+filename = f"./output/{window_name} {localdate}.mp4"
 
 fourcc = cv2.VideoWriter_fourcc(*"mp4v")
 fps = 60.0
