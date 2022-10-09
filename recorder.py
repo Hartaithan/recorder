@@ -9,9 +9,9 @@ window_name = "iTunes"
 
 date = datetime.now()
 localdate = date.astimezone(get_localzone()).strftime("%Y-%m-%d %H-%M-%S")
-filename = "./output/" + window_name + " " + localdate + ".avi"
+filename = "./output/" + window_name + " " + localdate + ".mp4"
 
-fourcc = cv2.VideoWriter_fourcc(*"XVID")
+fourcc = cv2.VideoWriter_fourcc(*"mp4v")
 fps = 60.0
 record_seconds = 5
 w = gw.getWindowsWithTitle(window_name)[0]
