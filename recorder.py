@@ -7,8 +7,10 @@ from datetime import datetime
 from tzlocal import get_localzone
 
 url = "https://multiuser-sketchpad-colors.glitch.me"
+# TODO OPEN WINDOW IN FULLSCREEN
 child = subprocess.Popen(f"start chrome {url} --new-window", shell=True)
 
+# TODO GET ACTIVE WINDOW NAME
 window_name = "Multiuser Sketchpad (Colors)"
 
 date = datetime.now()
@@ -18,7 +20,7 @@ filename = f"./output/{window_name} {localdate}.mp4"
 fourcc = cv2.VideoWriter_fourcc(*"mp4v")
 fps = 60.0
 record_seconds = 5
-w = gw.getWindowsWithTitle(window_name)[0]
+w = gw.getActiveWindow()
 w.activate()
 out = cv2.VideoWriter(filename, fourcc, fps, tuple(w.size))
 
